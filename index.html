@@ -13,7 +13,23 @@
   <!-- En-tête modernisé avec Poppins (poids moyen) -->
 
 
-  <header class="h-6"></header>
+<header class="flex items-center justify-center my-6">
+  <hr class="flex-grow border-t border-gray-300 mr-4" />
+  <h2 class="text-2xl font-bold text-gray-800 font-[Poppins]">Bonjour Castets !</h2>
+  <hr class="flex-grow border-t border-gray-300 ml-4" />
+</header>
+
+    <!-- Widget météo libre (Open-Meteo) -->
+  <section id="weather" class="max-w-sm mx-auto bg-white dark:bg-gray-800 p-6 rounded-2xl shadow mb-6">
+    <div class="flex items-center justify-between">
+      <div>
+        <p id="weather-city" class="text-lg font-semibold">Castets</p>
+        <p id="weather-temp" class="text-4xl font-bold mt-2">--°C</p>
+      </div>
+      <img id="weather-icon" src="" alt="" class="w-16 h-16" />
+    </div>
+    <p id="weather-desc" class="mt-2 text-gray-600 dark:text-gray-300 capitalize"></p>
+  </section>
 
   <div class="flex items-center justify-center my-6">
   <hr class="flex-grow border-t border-gray-300 mr-4">
@@ -243,5 +259,53 @@
     <p class="text-sm text-center text-gray-700 leading-tight font-[Poppins]">Procédures XT-15</p>
   </div>
   </main>
+
+  <script>
+    // Coordonnées de Castets (Landes)
+    const LAT = 43.8231;
+    const LON = -0.8497;
+    async function fetchWeather() {
+      try {
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current_weather=true&temperature_unit=celsius&timezone=Europe%2FParis`;
+        const res = await fetch(url);
+        const data = await res.json();
+        const weather = data.current_weather;
+        // Température
+        document.getElementById('weather-temp').textContent = Math.round(weather.temperature) + '°C';
+        // Description basique à partir du code météo
+        const codes = {
+          0: 'ciel dégagé', 1: 'principalement clair', 2: 'partiellement nuageux', 3: 'couvert',
+          45: 'brume', 48: 'brouillard givrant',
+          51: 'bruine légère', 53: 'bruine modérée', 55: 'bruine dense',
+          61: 'pluie légère', 63: 'pluie modérée', 65: 'pluie forte',
+          71: 'neige légère', 73: 'neige modérée', 75: 'neige forte',
+          80: 'averses légères', 81: 'averses modérées', 82: 'averses violentes',
+          95: 'orage', 99: 'orage de grêle'
+        };
+        const desc = codes[weather.weathercode] || 'Inconnu';
+        document.getElementById('weather-desc').textContent = desc;
+        // Icon mapping simplifié
+        const iconMap = {
+          'ciel dégagé': '☀️', 'principalement clair': '🌤️', 'partiellement nuageux': '⛅', 'couvert': '☁️',
+          'pluie légère': '🌧️', 'pluie modérée': '🌧️', 'pluie forte': '🌧️',
+          'neige légère': '❄️', 'neige modérée': '❄️', 'neige forte': '❄️',
+          'orage': '⛈️', 'brouillard': '🌫️', 'Inconnu': '❔'
+        };
+        const iconEmoji = iconMap[desc] || '❔';
+        // Affiche l'emoji dans une div pour compatibilité
+        document.getElementById('weather-icon').style.display = 'none';
+        const span = document.createElement('span');
+        span.textContent = iconEmoji;
+        span.className = 'text-5xl';
+        document.getElementById('weather').querySelector('div').appendChild(span);
+      } catch (err) {
+        document.getElementById('weather-city').textContent = 'Erreur météo';
+        document.getElementById('weather-temp').textContent = '';
+        document.getElementById('weather-desc').textContent = '';
+      }
+    }
+    fetchWeather();
+  </script>
+
 </body>
 </html>
