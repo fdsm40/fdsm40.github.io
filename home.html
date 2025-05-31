@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cast'Aide</title>
+  <!-- Google Font Poppins (dépouillé, poids 500) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- En-tête modernisé avec Poppins (poids moyen) -->
+
+
+<header class="flex items-center justify-center my-6">
+  <hr class="flex-grow border-t border-gray-300 mr-4" />
+  <h2 class="text-2xl font-bold text-gray-800 font-[Poppins]">Bonjour Castets !</h2>
+  <hr class="flex-grow border-t border-gray-300 ml-4" />
+</header>
+
+    <!-- Widget météo libre (Open-Meteo) -->
+  <section id="weather" class="max-w-sm mx-auto bg-white dark:bg-gray-800 p-6 rounded-2xl shadow mb-6">
+    <div class="flex items-center justify-between">
+      <div>
+        <p id="weather-city" class="text-lg font-semibold">Castets</p>
+        <p id="weather-temp" class="text-4xl font-bold mt-2">--°C</p>
+      </div>
+      <img id="weather-icon" src="" alt="" class="w-16 h-16" />
+    </div>
+    <p id="weather-desc" class="mt-2 text-gray-600 dark:text-gray-300 capitalize"></p>
+  </section>
+
+  <div class="flex items-center justify-center my-6">
+  <hr class="flex-grow border-t border-gray-300 mr-4">
+  <h2 class="text-2xl font-bold text-gray-800 font-[Poppins]">Accès rapide</h2>
+  <hr class="flex-grow border-t border-gray-300 ml-4">
+</div>
+
+  <!-- Section principale des boutons -->
+  <main class="max-w-4xl mx-auto flex flex-wrap justify-center gap-4 p-4">
+    <!-- Exemple de bouton plein écran logo : dupliquez ce bloc pour ajouter un nouveau lien -->
+
+    <!-- Autre bouton -->
+<div class="flex flex-col items-center gap-2 w-36">
+    <a href="http://172.27.38.33/GEST/index.php?page=dashboard&userid=%&state=%" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/gestsup.png" alt="Gestsup" class="w-full h-full object-cover" />
+    </a>
+  <p class="text-sm text-center text-gray-700  leading-tight font-[Poppins]">Ticket d'incident</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-36">
+      <a href="http://portailgroupement.mousquetaires.com/" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/portailgroup.png" alt="Portail Groupement" class="w-full h-full object-cover" />
+    </a>
+  <p class="text-sm text-center text-gray-700  leading-tight font-[Poppins]">Portail Groupement</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-36">
+      <a href="https://mousquetaires.service-now.com/now/nav/ui/classic/params/target/esc%3Fid%3Dec_dashboard" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/oasis.png" alt="Oasis" class="w-full h-full object-cover" />
+    </a>
+  <p class="text-sm text-center text-gray-700  leading-tight font-[Poppins]">Ticket OASIS</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-36">
+        <a href="https://geode.mousquetaires.com/Geode.Web/" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/geode.png" alt="Geode" class="w-full h-full object-cover" />
+    </a>
+  <p class="text-sm text-center text-gray-700  leading-tight font-[Poppins]">Géode</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-36">
+                  <a href="http://w203pf9008/Etiquetage/" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/etiquetage.png" alt="Etiquetage" class="w-full h-full object-cover" />
+    </a>
+  <p class="text-sm text-center text-gray-700  leading-tight font-[Poppins]">Étiquetage</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-36">
+                    <a href="https://lesmousquetaires.talent-soft.com/LoginPage.aspx" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/talentsoft.png" alt="Etiquetage" class="w-full h-full object-cover" />
+    </a>
+  <p class="text-sm text-center text-gray-700  leading-tight font-[Poppins]">TalentSoft</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-36">
+                      <a href="https://www.mypeopledoc.com/" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/mpd.png" alt="MyPeopleDoc" class="w-full h-full object-cover" />
+    </a>
+  <p class="text-sm text-center text-gray-700  leading-tight font-[Poppins]">My People Doc</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-36">
+       <a href="https://outlook.office.com/mail/" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/outlook.png" alt="Outlook" class="w-full h-full object-cover" />
+    </a>
+  <p class="text-sm text-center text-gray-700  leading-tight font-[Poppins]">Outlook Web</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-36">
+            <a href="https://teams.microsoft.com/" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/teams.png" alt="Teams" class="w-full h-full object-cover" />
+    </a>
+  <p class="text-sm text-center text-gray-700  leading-tight font-[Poppins]">Teams Web</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-36">
+  <a href="https://fast.com/fr/" target="_blank" rel="noopener noreferrer"
+     class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+    <img src="logos/fast.png" alt="FAST" class="w-full h-full object-cover" />
+  </a>
+  <p class="text-sm text-center text-gray-700  leading-tight font-[Poppins]">Test de débit</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-36">
+  <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer"
+     class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+    <img src="logos/chatgpt.png" alt="chatgpt" class="w-full h-full object-cover" />
+  </a>
+  <p class="text-sm text-center text-gray-700  leading-tight font-[Poppins]">ChatGPT</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-36">
+  <a href="pdf/REPERTOIRE TELEPHONIQUE_TOIP-V2.pdf" target="_blank" rel="noopener noreferrer"
+     class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+    <img src="logos/rep.png" alt="chatgpt" class="w-full h-full object-cover" />
+  </a>
+  <p class="text-sm text-center text-gray-700  leading-tight font-[Poppins]">Répertoire Téléphonique</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-36">
+  <a href="gen_signature/index.html" target="_blank" rel="noopener noreferrer"
+     class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+    <img src="logos/signature.png" alt="dignature" class="w-full h-full object-cover" />
+  </a>
+  <p class="text-sm text-center text-gray-700  leading-tight font-[Poppins]">Générateur de signature</p>
+</div>
+<div class="flex flex-col items-center gap-2 w-36 relative" id="phoneCard">
+  <a href="#" onclick="togglePhones(event)"
+     class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition flex items-center justify-center">
+    <img src="logos/tel.png" alt="chatgpt" class="w-full h-full object-cover" />
+  </a>
+  <p class="text-sm text-center text-gray-700 leading-tight font-[Poppins]">Numéros Informatique</p>
+
+  <div id="phoneBox"
+       class="hidden absolute top-full mt-2 left-0 w-48 bg-gray-100 rounded p-2 text-sm text-gray-800 shadow z-50">
+    <p><strong>STIME :</strong> 01 41 17 24 07</p>
+    <p><strong>Réseau :</strong> 01 69 64 55 55</p>
+    <p><strong>Gwenn :</strong> 51 35</p>
+   <p><strong>Fabio:</strong> 51 64</p>
+  </div>
+</div>
+
+<script>
+  function togglePhones(event) {
+    event.preventDefault();
+    const box = document.getElementById("phoneBox");
+    box.classList.toggle("hidden");
+  }
+
+  document.addEventListener("click", function (e) {
+    const card = document.getElementById("phoneCard");
+    const box = document.getElementById("phoneBox");
+    if (!card.contains(e.target)) {
+      box.classList.add("hidden");
+    }
+  });
+</script>
+
+<!-- Titre \"Procédures\" avec traits -->
+<div class="w-full flex flex-col items-center my-6">
+  <div class="flex items-center justify-center w-full px-4 sm:px-8">
+    <hr class="w-full border-t border-gray-300 mr-4">
+    <h2 class="text-2xl font-bold text-gray-800 font-[Poppins] whitespace-nowrap">Procédures</h2>
+    <hr class="w-full border-t border-gray-300 ml-4">
+  </div>
+  <div class="flex flex-wrap justify-center gap-4 mt-6">
+    <!-- Exemple de bouton procédure -->
+    <div class="flex flex-col items-center gap-2 w-36">
+            <a href="pdf/gestsup.pdf" target="_blank" rel="noopener noreferrer"
+         class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+        <img src="logos/gestsup.png" alt="Procédure" class="w-full h-full object-cover" />
+      </a>
+      <p class="text-sm text-center text-gray-700 leading-tight font-[Poppins]">Comment créer un ticket</p>
+    </div>
+  <div class="flex flex-col items-center gap-2 w-36">
+    <a href="pdf/etiquetage.pdf" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/etiquetage.png" alt="Procédure VPN" class="w-full h-full object-cover" />
+    </a>
+    <p class="text-sm text-center text-gray-700 leading-tight font-[Poppins]">Comment créer une étiquette</p>
+  </div>
+    <div class="flex flex-col items-center gap-2 w-36">
+    <a href="pdf/disco.pdf" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/disco.png" alt="Procédure VPN" class="w-full h-full object-cover" />
+    </a>
+    <p class="text-sm text-center text-gray-700 leading-tight font-[Poppins]">Comment lancer une requete</p>
+  </div>
+      <div class="flex flex-col items-center gap-2 w-36">
+    <a href="pdf/vocale.pdf" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/zetes.png" alt="Procédure VPN" class="w-full h-full object-cover" />
+    </a>
+    <p class="text-sm text-center text-gray-700 leading-tight font-[Poppins]">Temps de réponse Vocale</p>
+  </div>
+        <div class="flex flex-col items-center gap-2 w-36">
+    <a href="pdf/Imprimante_Infolog_Down.pdf" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/imp.png" alt="Procédure VPN" class="w-full h-full object-cover" />
+    </a>
+    <p class="text-sm text-center text-gray-700 leading-tight font-[Poppins]">Redémarrer Imprimante</p>
+  </div>
+        <div class="flex flex-col items-center gap-2 w-36">
+    <a href="https://mousquetaires.sharepoint.com/sites/FILDECOM.Castets2/Documents%20partages/Forms/AllItems.aspx?id=%2Fsites%2FFILDECOM%2ECastets2%2FDocuments%20partages%2F7%20%2D%20INFORMATIQUE%2FProc%C3%A9dures%2FBureautique%2FEXCEL&viewid=2e562373%2D7539%2D47b1%2Da37e%2Ddb5c4dd39e48&FolderCTID=0x0120007DAA79DBE5C13E4F9C324CC745DC9A40" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/excel.png" alt="Procédure VPN" class="w-full h-full object-cover" />
+    </a>
+    <p class="text-sm text-center text-gray-700 leading-tight font-[Poppins]">Procédures Excel</p>
+  </div>
+        <div class="flex flex-col items-center gap-2 w-36">
+    <a href="https://mousquetaires.sharepoint.com/sites/FILDECOM.Castets2/Documents%20partages/Forms/AllItems.aspx?id=%2Fsites%2FFILDECOM%2ECastets2%2FDocuments%20partages%2F7%20%2D%20INFORMATIQUE%2FProc%C3%A9dures%2FBureautique%2FOUTLOOK&viewid=2e562373%2D7539%2D47b1%2Da37e%2Ddb5c4dd39e48&FolderCTID=0x0120007DAA79DBE5C13E4F9C324CC745DC9A40" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/outlook.png" alt="Procédure VPN" class="w-full h-full object-cover" />
+    </a>
+    <p class="text-sm text-center text-gray-700 leading-tight font-[Poppins]">Procédures Outlook</p>
+  </div>
+          <div class="flex flex-col items-center gap-2 w-36">
+    <a href="https://mousquetaires.sharepoint.com/sites/FILDECOM.Castets2/Documents%20partages/Forms/AllItems.aspx?id=%2Fsites%2FFILDECOM%2ECastets2%2FDocuments%20partages%2F7%20%2D%20INFORMATIQUE%2FProc%C3%A9dures%2FBureautique%2FTEAMS&viewid=2e562373%2D7539%2D47b1%2Da37e%2Ddb5c4dd39e48&FolderCTID=0x0120007DAA79DBE5C13E4F9C324CC745DC9A40" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/teams.png" alt="Procédure VPN" class="w-full h-full object-cover" />
+    </a>
+    <p class="text-sm text-center text-gray-700 leading-tight font-[Poppins]">Procédures Teams</p>
+  </div>
+          <div class="flex flex-col items-center gap-2 w-36">
+    <a href="https://mousquetaires.sharepoint.com/sites/FILDECOM.Castets2/Documents%20partages/Forms/AllItems.aspx?id=%2Fsites%2FFILDECOM%2ECastets2%2FDocuments%20partages%2F7%20%2D%20INFORMATIQUE%2FProc%C3%A9dures%2FBureautique%2FWINDOWS&viewid=2e562373%2D7539%2D47b1%2Da37e%2Ddb5c4dd39e48&FolderCTID=0x0120007DAA79DBE5C13E4F9C324CC745DC9A40" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/windows.png" alt="Procédure VPN" class="w-full h-full object-cover" />
+    </a>
+    <p class="text-sm text-center text-gray-700 leading-tight font-[Poppins]">Procédures Windows</p>
+  </div>
+            <div class="flex flex-col items-center gap-2 w-36">
+    <a href="https://mousquetaires.sharepoint.com/sites/place" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/place.png" alt="Procédure VPN" class="w-full h-full object-cover" />
+    </a>
+    <p class="text-sm text-center text-gray-700 leading-tight font-[Poppins]">Infos & aides sur Pl@ce</p>
+  </div>
+          <div class="flex flex-col items-center gap-2 w-36">
+    <a href="https://mousquetaires.sharepoint.com/sites/FILDECOM.Castets2/Documents%20partages/Forms/AllItems.aspx?id=%2Fsites%2FFILDECOM%2ECastets2%2FDocuments%20partages%2F7%20%2D%20INFORMATIQUE%2FProc%C3%A9dures%2FMat%C3%A9riels%2FImprimantes&viewid=2e562373%2D7539%2D47b1%2Da37e%2Ddb5c4dd39e48&FolderCTID=0x0120007DAA79DBE5C13E4F9C324CC745DC9A40" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/imp2.png" alt="Procédure VPN" class="w-full h-full object-cover" />
+    </a>
+    <p class="text-sm text-center text-gray-700 leading-tight font-[Poppins]">Procédures Imprimantes</p>
+  </div>
+            <div class="flex flex-col items-center gap-2 w-36">
+    <a href="https://mousquetaires.sharepoint.com/sites/FILDECOM.Castets2/Documents%20partages/Forms/AllItems.aspx?id=%2Fsites%2FFILDECOM%2ECastets2%2FDocuments%20partages%2F7%20%2D%20INFORMATIQUE%2FProc%C3%A9dures%2FMat%C3%A9riels%2FT%C3%A9l%C3%A9phonie&viewid=2e562373%2D7539%2D47b1%2Da37e%2Ddb5c4dd39e48&FolderCTID=0x0120007DAA79DBE5C13E4F9C324CC745DC9A40" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/dect.png" alt="Procédure VPN" class="w-full h-full object-cover" />
+    </a>
+    <p class="text-sm text-center text-gray-700 leading-tight font-[Poppins]">Procédures DECT</p>
+  </div>
+              <div class="flex flex-col items-center gap-2 w-36">
+    <a href="https://mousquetaires.sharepoint.com/sites/FILDECOM.Castets2/Documents%20partages/Forms/AllItems.aspx?id=%2Fsites%2FFILDECOM%2ECastets2%2FDocuments%20partages%2F7%20%2D%20INFORMATIQUE%2FProc%C3%A9dures%2FMat%C3%A9riels%2FOMNNI%20%2D%20XT15&viewid=2e562373%2D7539%2D47b1%2Da37e%2Ddb5c4dd39e48&FolderCTID=0x0120007DAA79DBE5C13E4F9C324CC745DC9A40" target="_blank" rel="noopener noreferrer"
+       class="w-36 h-36 bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+      <img src="logos/xt15.png" alt="Procédure VPN" class="w-full h-full object-cover" />
+    </a>
+    <p class="text-sm text-center text-gray-700 leading-tight font-[Poppins]">Procédures XT-15</p>
+  </div>
+  </main>
+
+  <script>
+    // Coordonnées de Castets (Landes)
+    const LAT = 43.8231;
+    const LON = -0.8497;
+    async function fetchWeather() {
+      try {
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current_weather=true&temperature_unit=celsius&timezone=Europe%2FParis`;
+        const res = await fetch(url);
+        const data = await res.json();
+        const weather = data.current_weather;
+        // Température
+        document.getElementById('weather-temp').textContent = Math.round(weather.temperature) + '°C';
+        // Description basique à partir du code météo
+        const codes = {
+          0: 'ciel dégagé', 1: 'principalement clair', 2: 'partiellement nuageux', 3: 'couvert',
+          45: 'brume', 48: 'brouillard givrant',
+          51: 'bruine légère', 53: 'bruine modérée', 55: 'bruine dense',
+          61: 'pluie légère', 63: 'pluie modérée', 65: 'pluie forte',
+          71: 'neige légère', 73: 'neige modérée', 75: 'neige forte',
+          80: 'averses légères', 81: 'averses modérées', 82: 'averses violentes',
+          95: 'orage', 99: 'orage de grêle'
+        };
+        const desc = codes[weather.weathercode] || 'Inconnu';
+        document.getElementById('weather-desc').textContent = desc;
+        // Icon mapping simplifié
+        const iconMap = {
+          'ciel dégagé': '☀️', 'principalement clair': '🌤️', 'partiellement nuageux': '⛅', 'couvert': '☁️',
+          'pluie légère': '🌧️', 'pluie modérée': '🌧️', 'pluie forte': '🌧️',
+          'neige légère': '❄️', 'neige modérée': '❄️', 'neige forte': '❄️',
+          'orage': '⛈️', 'brouillard': '🌫️', 'Inconnu': '❔'
+        };
+        const iconEmoji = iconMap[desc] || '❔';
+        // Affiche l'emoji dans une div pour compatibilité
+        document.getElementById('weather-icon').style.display = 'none';
+        const span = document.createElement('span');
+        span.textContent = iconEmoji;
+        span.className = 'text-5xl';
+        document.getElementById('weather').querySelector('div').appendChild(span);
+      } catch (err) {
+        document.getElementById('weather-city').textContent = 'Erreur météo';
+        document.getElementById('weather-temp').textContent = '';
+        document.getElementById('weather-desc').textContent = '';
+      }
+    }
+    fetchWeather();
+  </script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68394258ad9dff4b270c8049/1isfqmav2';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>
