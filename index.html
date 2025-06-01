@@ -19,10 +19,22 @@
   </div>
 
   <script>
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
+    const HASH_MOT_DE_PASSE_REF = 'ddc7c02278f5de17c93e9e74be346992d9dcd8099dc4045ea13535d23f5dd00e';
+
+    async function calculerHashSHA256(message) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(message);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       const password = document.getElementById('passwordInput').value;
-      if (password === 'castets2025') {
+      const hashSaisi = await calculerHashSHA256(password);
+
+      if (hashSaisi === HASH_MOT_DE_PASSE_REF) {
         window.location.href = 'home.html';
       } else {
         const errorMsg = document.getElementById('errorMsg');
